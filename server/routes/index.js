@@ -12,6 +12,7 @@ router.get('/albums/:id', controllers.getAlbumById)
 router.get('/songs', controllers.getAllSongs)
 router.get('/songs:id', controllers.getSongById)
 
+// CRUD //
 router.post('/albums', controllers.createAlbum)
 router.put('/albums/:id', controllers.updateAlbum)
 router.delete('/albums/:id', controllers.deleteAlbum)
