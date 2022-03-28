@@ -13,7 +13,7 @@ const main = async () => {
   const lifeOfPablo = await Album.find({ name: 'The Life of Pablo' })
 
   const songs = [
-        /// COLLEGE DROPOUT /////
+        /// COLLEGE DROPOUT //////////////////////////////////////////////////////////////////
           {
             name: "Intro (Skit)",
             length: '0:19',
@@ -140,196 +140,296 @@ const main = async () => {
             features: 'none',
             album_id: dropout[0]._id
           },
-     //////. LATE REGISTRATION  /////             
-     {
-      name:	"Wake Up Mr. West",
-      length: '0:41',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },  
+     //////. LATE REGISTRATION  //////////////////////////////////////////////////////////////////            
     {
-      name: `Heard 'Em Say`,
-      length: '03:23',
-      features: 'featuring Adam Levine',
-      album_id: lateRegistration[0]._id
-    }, 
-    {
-      name: 'Touch the Sky',
-      length: '03:57',
-      features: 'featuring Lupe Fiasco',
-      album_id: lateRegistration[0]._id
-    },
-    {
-      name: "Gold Digger",
-      length: '3:28',
-      features: 'featuring Jamie Foxx',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Skit No. 1",
-      length: '0:33',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    }, 
-    {
-      name: 'Drive Slow',
-      length: '04:32',
-      features: 'featuring Paul Wall and GLC',
-      album_id: lateRegistration[0]._id
-    },  
-    {
-      name: "My Way Home",
-      length: '1:43',
-      features: 'performed by Common',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Crack Music",
-      length: '4:31',
-      features: 'featuring The Game',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Roses",
-      length: '4:05',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name:	"Bring Me Down",
-      length: '3:18',
-      features: 'featuring Brandy',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name:	"Addiction",
-      length: '4:27',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Skit No. 2",
-      length: '0:31',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Diamonds from Sierra Leone (Remix)" ,
-      length: '3:53',
-      features: 'featuring Jay-Z',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "We Major",
-      length: '7:28',
-      features: 'featuring Nas and Really Doe',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Skit No. 3",
-      length: '0:24',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Hey Mama",
-      length: '5:05',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Celebration",
-      length: '3:18',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Skit No. 4",
-      length: '1:18',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Gone",
-      length: '5:33',
-      features: `featuring Consequence and Cam'ron`,
-      album_id: lateRegistration[0]._id
-    },   
-    {
-      name: "Diamonds from Sierra Leone (bonus track)",
-      length: '3:58',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    }, 
-    {
-      name: "Late (hidden track)",
-      length: '3:50',
-      features: 'none',
-      album_id: lateRegistration[0]._id
-    } ,
-   
-      
-     
-      {
-        name: 'Diamonds from Sierra Leone',
-        length: '03:58',
-        features: 'none',
-        album_id: lateRegistration[0]._id
-      },
+    name:	"Wake Up Mr. West",
+    length: '0:41',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },  
+  {
+    name: `Heard 'Em Say`,
+    length: '03:23',
+    features: 'featuring Adam Levine',
+    album_id: lateRegistration[0]._id
+  }, 
+  {
+    name: 'Touch the Sky',
+    length: '03:57',
+    features: 'featuring Lupe Fiasco',
+    album_id: lateRegistration[0]._id
+  },
+  {
+    name: "Gold Digger",
+    length: '3:28',
+    features: 'featuring Jamie Foxx',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Skit No. 1",
+    length: '0:33',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  }, 
+  {
+    name: 'Drive Slow',
+    length: '04:32',
+    features: 'featuring Paul Wall and GLC',
+    album_id: lateRegistration[0]._id
+  },  
+  {
+    name: "My Way Home",
+    length: '1:43',
+    features: 'performed by Common',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Crack Music",
+    length: '4:31',
+    features: 'featuring The Game',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Roses",
+    length: '4:05',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name:	"Bring Me Down",
+    length: '3:18',
+    features: 'featuring Brandy',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name:	"Addiction",
+    length: '4:27',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Skit No. 2",
+    length: '0:31',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Diamonds from Sierra Leone (Remix)" ,
+    length: '3:53',
+    features: 'featuring Jay-Z',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "We Major",
+    length: '7:28',
+    features: 'featuring Nas and Really Doe',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Skit No. 3",
+    length: '0:24',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Hey Mama",
+    length: '5:05',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Celebration",
+    length: '3:18',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Skit No. 4",
+    length: '1:18',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Gone",
+    length: '5:33',
+    features: `featuring Consequence and Cam'ron`,
+    album_id: lateRegistration[0]._id
+  },   
+  {
+    name: "Diamonds from Sierra Leone (bonus track)",
+    length: '3:58',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  }, 
+  {
+    name: "Late (hidden track)",
+    length: '3:50',
+    features: 'none',
+    album_id: lateRegistration[0]._id
+  } ,
+   /////////// GRADUATION //////////////////////////////////////////////////////////
+              
               {
-                name: 'Stronger',
-                length: '05:12',
+                name: "Good Morning",
+                length: '3:15',
                 features: 'none',
                 album_id: graduation[0]._id
               },
               {
-                name: 'Good Life',
-                length: '03:27',
-                features: 'T-Pain',
-                album_id: graduation[0]._id
-              },
-              {
-                name: `Can't Tell Me Nothing`,
-                length: '04:32',
-                features: 'Young Jeezy',
-                album_id: graduation[0]._id
-              },
-              {
-                name: 'Flashing Lights',
-                length: '03:58',
+                name:	"Champion",
+                length: '2:47',
                 features: 'none',
                 album_id: graduation[0]._id
               },
+              {
+                name: "Stronger",
+                length: '5:12',
+                features: 'none',
+                album_id: graduation[0]._id
+              },
+              {
+                name:	"I Wonder",
+                length: '4:03',
+                features: 'none',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Good Life",
+                length: '3:27',
+                features: 'featuring T-Pain',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Can't Tell Me Nothing",
+                length: '4:31',
+                features: 'none',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Barry Bonds",
+                length: '3:24',
+                features: 'featuring Lil Wayne',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Drunk and Hot Girls",
+                length: '5:13',
+                features: 'featuring Mos Def',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Flashing Lights" ,
+                length: '3:57',
+                features: 'featuring Dwele',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Everything I Am" ,
+                length: '3:47',
+                features: 'featuring scratches by DJ Premier',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "The Glory",
+                length: '3:32',
+                features: 'none',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Homecoming" ,
+                length: '3:23',
+                features: 'featuring Chris Martin',
+                album_id: graduation[0]._id
+              },
+              {
+                name: "Big Brother",
+                length: '4:47',
+                features: 'none',
+                album_id: graduation[0]._id
+              },
+    //////////. MBDTF  ////////////////////////////////////////////////////////// 
       {
-        name: 'Power',
-        length: '04:52',
+        name: "Dark Fantasy",
+        length: '4:40',
         features: 'none',
         album_id: myDarkFantasy[0]._id
       },
       {
-        name: 'All of the Lights ',
-        length: '04:59',
-        features: 'Rihanna',
+        name:	"Gorgeous",
+        length: '5:57',
+        features: 'featuring Kid Cudi and Raekwon',
         album_id: myDarkFantasy[0]._id
       },
       {
-        name: 'Monster',
-        length: '06:18',
-        features: 'Niki Minaj, Jay-Z',
+        name: "Power",
+        length: '4:52',
+        features: 'none',
         album_id: myDarkFantasy[0]._id
       },
       {
-        name: 'Devil in a New Dress',
-        length: '05:52',
-        features: 'Rick Ross',
+        name: "All of the Lights (Interlude)",
+        length: '1:02',
+        features: 'none',
         album_id: myDarkFantasy[0]._id
       },
       {
-        name: '',
-        length: '',
-        features: '',
+        name: "All of the Lights",
+        length: '4:59',
+        features: 'featuring Rihanna',
         album_id: myDarkFantasy[0]._id
       },
+      {
+        name: "Monster",
+        length: '6:18',
+        features: '(featuring Jay-Z, Rick Ross, Nicki Minaj and Bon Iver',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "So Appalled",
+        length: '6:38',
+        features: 'featuring Swizz Beatz, Jay-Z, Pusha T, Cyhi the Prynce and RZA',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "Devil in a New Dress",
+        length: '5:52',
+        features: 'featuring Rick Ross',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "Runaway",
+        length: '9:07',
+        features: 'featuring Pusha T',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "Hell of a Life",
+        length: '5:27',
+        features: 'none',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "Blame Game",
+        length: '7:49',
+        features: 'featuring John Legend and Chris Rock',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "Lost in the World",
+        length: '4:16',
+        features: 'none',
+        album_id: myDarkFantasy[0]._id
+      },
+      {
+        name: "Who Will Survive in America",
+        length: '1:38',
+        features: 'none',
+        album_id: myDarkFantasy[0]._id
+      },
+
+
+
+
             {
               name: 'On Sight',
               length: '2:36',
