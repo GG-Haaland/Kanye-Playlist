@@ -13,7 +13,7 @@ Songs (collection) will contain the name of the individual song, length, feature
 ## FRONTEND
 
 
-I plan to layout my app with a simple landing page, a header bar with a few navigation buttons ("Home", "Albums", "About", “Playlist”.), and a search bar to search the albums and songs collection
+I plan to layout my app with a landing page, a header bar with a some navigation buttons ("Home", "Albums", "About", “Playlist”, ect.), and a search bar to search the albums and songs collection
 
 The Albums Component will display all of the albums and use React Router to allow the user to click each album cover and retrieve information about that album. It will also list all the songs in that given album.
 
