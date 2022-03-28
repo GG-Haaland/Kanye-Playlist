@@ -25,6 +25,50 @@ const getAlbumById = async (req, res) => {
     }
 }
 
+const updateAlbum = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, album) => {
+            if (err) {
+                res.status(500).send(err);
+            }
+            if (!album) {
+                res.status(500).send('Playlist not found!');
+            }
+            return res.status(200).json(album);
+        })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const createAlbum = async (req, res) => {
+    try {
+        const album = await new Album (req.body)
+        await album.save()
+        return res.status(201).json({
+            album,
+        });
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
+    }
+}
+
+const deleteAlbum = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deleted = await Album.findByIdAndDelete(id)
+        if (deleted) {
+            return res.status(200).send("Album deleted");
+        }
+        throw new Error("Album not found");
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+
+
 const getSongById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -47,12 +91,14 @@ const getAllSongs = async (req, res) => {
     }
 }
 
+
+
 /////////////// CREATE PLAYLIST FUNCTIONS //////////////////
 
 // const createPlaylist = async (req, res) => {
 //     try {
-//         const album = await new Album (req.body)
-//         await album.save()
+//         const playlist = await new Playlist (req.body)
+//         await playlist.save()
 //         return res.status(201).json({
 //             album,
 //         });
@@ -61,7 +107,7 @@ const getAllSongs = async (req, res) => {
 //     }
 // }
 
-// const updatePlaylist = async (req, res) => {
+// const updateAlbum = async (req, res) => {
 //     try {
 //         const { id } = req.params;
 //         await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, plant) => {
@@ -96,6 +142,9 @@ module.exports = {
     
     getAllAlbums,
     getAlbumById,
+    updateAlbum,
+    createAlbum,
+    deleteAlbum,
     getAllSongs,
     getSongById
     // createPlaylist,

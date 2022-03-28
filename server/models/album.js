@@ -3,12 +3,12 @@ const Schema  = mongoose.Schema
 
 const Album = new Schema(
   {
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    image: { type: String, required: true },
-    released: { type: String, required: true },
-    length: { type: String, required: true }, 
-    platinum: { type: String, required: true },
+    name: { type: String, required: false },
+    description: { type: String, required: false },
+    image: { type: String, required: false },
+    released: { type: String, required: false },
+    length: { type: String, required: false }, 
+    platinum: { type: String, required: false },
   },
   { timestamps: true }
 )
