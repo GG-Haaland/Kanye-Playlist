@@ -42,7 +42,8 @@ const main = async () => {
     //     description:'',
     //     image:'',
     //     released:'',
-    //     length: ''
+    //     length: '',
+    //     platinum: '',
     // },
     // {
     //     name:'',
