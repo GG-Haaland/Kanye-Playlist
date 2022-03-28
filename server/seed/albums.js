@@ -15,7 +15,7 @@ const main = async () => {
     },
     {
         name:'Late Registration',
-        description:`he second studio album by American rapper and producer Kanye West. It was released on August 30, 2005, through Def Jam Recordings and Roc-A-Fella Records. West recorded the album over the course of a year during sessions held at studios in Hollywood and New York City, in collaboration with Jon Brion. The recording sessions also featured guest contributions from Adam Levine, Jamie Foxx, Common, Brandy, Jay-Z, and Nas, among others. Matching The College Dropout's commercial success, Late Registration debuted at number one on the US Billboard 200 and sold 860,000 copies in the first week, while reaching the top 10 in nine other countries, such as Ireland and the United Kingdom. It eventually reached more than 3,000,000 copies sold in the US and received a quadruple platinum certification from the Recording Industry Association of America (RIAA), as well as sales certifications in several other territories.`,
+        description:`The second studio album by American rapper and producer Kanye West. It was released on August 30, 2005, through Def Jam Recordings and Roc-A-Fella Records. West recorded the album over the course of a year during sessions held at studios in Hollywood and New York City, in collaboration with Jon Brion. The recording sessions also featured guest contributions from Adam Levine, Jamie Foxx, Common, Brandy, Jay-Z, and Nas, among others. Matching The College Dropout's commercial success, Late Registration debuted at number one on the US Billboard 200 and sold 860,000 copies in the first week, while reaching the top 10 in nine other countries, such as Ireland and the United Kingdom. It eventually reached more than 3,000,000 copies sold in the US and received a quadruple platinum certification from the Recording Industry Association of America (RIAA), as well as sales certifications in several other territories.`,
         image:'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Late_registration_cd_cover.jpg/220px-Late_registration_cd_cover.jpg',
         released:'August 30, 2005',
         length:'70:25',
@@ -31,27 +31,28 @@ const main = async () => {
     },
     {
         name:'My Beautiful Dark Twisted Fantasy',
-        description:`fifth studio album by American rapper and producer Kanye West. It was released on November 22, 2010, by Def Jam Recordings and Roc-A-Fella Records following a period of public controversy for West. Retreating to a self-imposed exile in Hawaii in 2009, he recorded the album at Honolulu's Avex Studio in a communal environment involving numerous contributing musicians. My Beautiful Dark Twisted Fantasy was an immediate and widespread critical success, and was named the best album of 2010 in many publications' year-end lists, including the annual Pazz & Jop poll of American critics nationwide. The album also won Best Rap Album at the 2012 Grammy Awards but was not nominated for Album of the Year, which was viewed as a "snub" by several media outlets. The album's hit single "All of the Lights" won Best Rap Song and Best Rap/Sung Collaboration. Widely considered West's best album, My Beautiful Dark Twisted Fantasy has ranked in several professionally curated lists as the best album of the 2010s and among the greatest of all time according to NME and Rolling Stone. George Condo's accompanying artwork – illustrating West being straddled by an armless winged female (resembling a mythological figure) – has been ranked among the greatest album covers. `,
+        description:`The fifth studio album by American rapper and producer Kanye West. It was released on November 22, 2010, by Def Jam Recordings and Roc-A-Fella Records following a period of public controversy for West. Retreating to a self-imposed exile in Hawaii in 2009, he recorded the album at Honolulu's Avex Studio in a communal environment involving numerous contributing musicians. My Beautiful Dark Twisted Fantasy was an immediate and widespread critical success, and was named the best album of 2010 in many publications' year-end lists, including the annual Pazz & Jop poll of American critics nationwide. The album also won Best Rap Album at the 2012 Grammy Awards but was not nominated for Album of the Year, which was viewed as a "snub" by several media outlets. The album's hit single "All of the Lights" won Best Rap Song and Best Rap/Sung Collaboration. Widely considered West's best album, My Beautiful Dark Twisted Fantasy has ranked in several professionally curated lists as the best album of the 2010s and among the greatest of all time according to NME and Rolling Stone. George Condo's accompanying artwork – illustrating West being straddled by an armless winged female (resembling a mythological figure) – has been ranked among the greatest album covers. `,
         image:'https://upload.wikimedia.org/wikipedia/en/f/f0/My_Beautiful_Dark_Twisted_Fantasy.jpg',
         released:'November 22, 2010',
         length: '68:39',
         platinum: '3x'
     },
-    // {
-    //     name:'',
-    //     description:'',
-    //     image:'',
-    //     released:'',
-    //     length: '',
-    //     platinum: '',
-    // },
-    // {
-    //     name:'',
-    //     description:'',
-    //     image:'',
-    //     released:'',
-    //     length: ''
-    // },
+    {
+        name:'Yeezus',
+        description:`The sixth studio album by American rapper and producer Kanye West. It was released on June 18, 2013, through Def Jam Recordings and Roc-A-Fella Records. West gathered a number of artists and close collaborators for the production, including Mike Dean, Daft Punk, Noah Goldstein, Arca, Hudson Mohawke, and Travis Scott. The album also features guest vocals from Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson, and Frank Ocean. Yeezus received widespread acclaim from critics, many of whom named it among West's best work and commended its brash direction, though public response was divided. The album was nominated for Best Rap Album at the 2014 Grammy Awards. The album debuted at number one on the US Billboard 200, selling 327,000 copies in the first week of release, while also topping the charts in Australia, Canada, Denmark, New Zealand, Russia and the United Kingdom. It has since been certified double platinum by the Recording Industry Association of America (RIAA), and was named by several publications as one of the best albums of the 2010s, including Rolling Stone, who later included it at 269 on its 2020 list of the 500 Greatest Albums of All Time.`,
+        image:'https://upload.wikimedia.org/wikipedia/en/0/03/Yeezus_album_cover.png',
+        released:'June 18, 2013',
+        length: '40:01',
+        platinum: '2x'
+    },
+    {
+        name:'The Life of Pablo',
+        description:`The seventh studio album by American rapper and producer Kanye West. It was released on February 14, 2016, through GOOD Music and distributed by Def Jam Recordings. Recording sessions took place from 2013 to 2016, in Italy, Mexico, Canada, and the United States. West and a variety of producers, including co-executive producers Rick Rubin and Noah Goldstein handled production. West enlisted guest vocals for the album from Chance the Rapper, Kirk Franklin, Kid Cudi, Desiigner, Rihanna, The Weeknd, Ty Dolla Sign, Post Malone, Kendrick Lamar, Sia, Vic Mensa, Chris Brown, Young Thug, and Sampha. The Life of Pablo received five nominations at the 2017 Grammy Awards, including Best Rap Album, though the Album of the Year rejection was deemed a snub by numerous publications. Following Tidal's initial disclosure of its streaming data and its release to competing streaming services, the album debuted at number one on the US Billboard 200, becoming the first to reach the summit primarily through streaming, and was ultimately certified double platinum by the Recording Industry Association of America (RIAA). It also debuted at number one in Norway, and in the top ten in Canada, Denmark, Finland, Ireland, the Netherlands, and Sweden.`,
+        image:'https://upload.wikimedia.org/wikipedia/en/4/4d/The_life_of_pablo_alternate.jpg',
+        released:'February 14, 2016',
+        length: '66:01',
+        platinum: '2x'
+    },
     // {
     //     name:'',
     //     description:'',
