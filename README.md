@@ -1,6 +1,6 @@
 ## GJ Haaland
 # Kanye-Playlist
-For our "Theme Park-Themed" full-stack app, we plan to build a database of major amusement parks in the US, as well as the most popular rollercoasters these parks have to offer. The database will be searchable, and have a variety of interative sorting methods to see a few different "Top Ten" lists of the best rollercoasters out there.
+For my full-stack app, I plan to build a database of all of Kanye west albums, as well as every song on each album. The database will be searchable, the ability to create a personal playlist.
 
 ## Backend
 For my database, I plan to build one collection for Albums, and a separate collection for his Songs, which we will link together via a "one-to-many" data structure.
@@ -26,8 +26,8 @@ The first day or two will be wokring mostly with the backend, collecting the dat
 https://trello.com/b/Yf76wiMQ/project-2
 
 ### ERD:
-![Alt text](https://photos.app.goo.gl/96mU5Pz7C656MV7n8)
+https://lucid.app/lucidchart/f007d50a-2a34-400e-9033-e96ba9c93d14/edit?invitationId=inv_147384fb-aedf-4655-9f0a-8db4dfee1bd4&page=0_0#
 
 ### Wireframe:
-![Alt text](https://photos.app.goo.gl/jgVxZBL4SehRq6ZC8)
+https://lucid.app/lucidchart/a4f82c7e-346b-41a6-8130-f5e0cce99bb0/edit?beaconFlowId=44A06E55FAF3E692&invitationId=inv_64bfaaba-e745-4c69-a17c-387aebd0b786&page=0_0#
 
