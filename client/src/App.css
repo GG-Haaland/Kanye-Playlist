@@ -12,21 +12,36 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+nav{
+  display:flex;
+  background-color:aquamarine;
+}
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-image: url('https://preview.redd.it/9oqn0t5lbpe41.jpg?width=960&crop=smart&auto=webp&s=80fa7d878e8c55030c5626ed837f5bc4d434c826');
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin); */
   color: white;
+  background-size: cover;
+  text-align: center;
+
 }
 .navbar {
   /* background-image: url("https://www.pluggedin.com/wp-content/uploads/2020/01/Kanye-West-The-Life-of-Pablo-review-image638x366.jpg-1200x688.jpeg"); */
   background-image: url("vhttps://images.genius.com/3dd435384396a2abbac6dbc4e84f9bb6.500x500x19.gif");
-  
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: black;
+  padding: 1em;
+  min-height: 2em;
+  font-family: 'Georgia';
 }
 
 .App-link {

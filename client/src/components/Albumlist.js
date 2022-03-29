@@ -1,32 +1,41 @@
 import React from "react";
 // import logo from '../logo.svg'
-// import { useNavigate } from "react-router-dom";
-// import { useState, useEffect } from 'react'
-// import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const AlbumList = () => {
-//   let navigate = useNavigate();
-//   const showDino = (dino) => {
-//     navigate(`${dino.id_number}`);
-//   };
+  useEffect(() =>{
+        getAlbums()
+      },[])
 
-//   const [dinos,setDinos] = useState([])
+  let navigate = useNavigate();
+//   
+  const showAlbum = (album) => {
+    navigate(`${album.id_number}`);
+  };
+
+  const [albums,setAlbums] = useState([])
   
-//   const getDinos = async() => {
-//     const dinoList = await axios.get('https://jurassic-master.herokuapp.com/api/dinos')
-//     setDinos(dinoList.data.dinos)
-//     console.log(dinos)
-//   }
-//   useEffect(() =>{
-//     getDinos()
-//   },[])
+  const getAlbums = async() => {
+    const albumList = await fetch('/albums') /*axios.get('https://jurassic-master.herokuapp.com/api/dinos')*/
+    setAlbums(albumList.data.albumss)
+    console.log(albums)
+  }
 
 
   return (
     <div className="album-grid">
-      
-      <img src='https://images.genius.com/3dd435384396a2abbac6dbc4e84f9bb6.500x500x19.gif' />
-    </div>
+    {albums.map((album) => (
+      <div className="album-card" onClick={() => showAlbum(album)} key={album.id_number}>
+        <img style={{ display: "block" }} src={album.image} alt={album.name} />
+        <h3>{album.name}</h3>
+      </div>
+    ))}
+  </div>
+      //   <img src='https://images.genius.com/3dd435384396a2abbac6dbc4e84f9bb6.500x500x19.gif' />
+      // </div>
+  
   );
 };
 export default AlbumList;
