@@ -5,11 +5,14 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const { default: mongoose } = require('mongoose');
 require('dotenv/config');
+const cors = require('cors');
+const { MongoClient } = require('mongodb');
 // require() imports and middleware here ^ ///////
 
 // const PORT = process.env.PORT || 3023;
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(logger('dev'))
 app.use(express.static(`${__dirname}/client/build`))

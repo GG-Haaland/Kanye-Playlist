@@ -5,12 +5,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const AlbumList = () => {
-  useEffect(() =>{
-        getAlbums()
-      },[])
-
-  let navigate = useNavigate();
-//   
+  let navigate = useNavigate();  
   const showAlbum = (album) => {
     navigate(`${album.id_number}`);
   };
@@ -18,10 +13,13 @@ const AlbumList = () => {
   const [albums,setAlbums] = useState([])
   
   const getAlbums = async() => {
-    const albumList = await fetch('/albums') /*axios.get('https://jurassic-master.herokuapp.com/api/dinos')*/
-    setAlbums(albumList.data.albumss)
-    console.log(albums)
+    const albumList = await fetch('http://localhost:4000/albums') /*axios.get('https://jurassic-master.herokuapp.com/api/dinos')*/
+    setAlbums(albumList.data.id)
+    console.log(albumList)
   }
+  useEffect(() =>{
+    getAlbums()
+  },[])
 
 
   return (

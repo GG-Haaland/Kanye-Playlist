@@ -1,5 +1,6 @@
 const db = require('../db')
 const Album  = require('../models/album')
+// const cors = require('cors');
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
