@@ -1,5 +1,6 @@
 const Song = require('../models/song');
 const Album = require('../models/album');
+const Playlist = require('../models/playlist');
 
 
 
@@ -93,19 +94,28 @@ const getAllSongs = async (req, res) => {
 
 
 
-/////////////// CREATE PLAYLIST FUNCTIONS //////////////////
+/////////////// PLAYLIST FUNCTIONS //////////////////
 
-// const createPlaylist = async (req, res) => {
-//     try {
-//         const playlist = await new Playlist (req.body)
-//         await playlist.save()
-//         return res.status(201).json({
-//             album,
-//         });
-//     } catch (error) {
-//         return res.status(500).json({ error: error.message })
-//     }
-// }
+const createPlaylist = async (req, res) => {
+    try {
+        const playlist = await new Playlist (req.body)
+        await playlist.save()
+        return res.status(201).json({
+            album,
+        });
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
+    }
+}
+
+const getAllPlaylist = async (req, res) => {
+    try {
+        const playlist = await Playlist.find()
+        return res.status(200).json({ playlist })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
 
 // const updateAlbum = async (req, res) => {
 //     try {
@@ -146,8 +156,9 @@ module.exports = {
     createAlbum,
     deleteAlbum,
     getAllSongs,
-    getSongById
-    // createPlaylist,
+    getSongById,
+    createPlaylist,
+    getAllPlaylist,
     // updatePlaylist,
     // deletePlaylist,
 

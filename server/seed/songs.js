@@ -532,7 +532,7 @@ const main = async () => {
       },
       {
         name: "Freestyle 4",
-        length: '2:03',
+        length: '2:03n',
         features: 'none',
         album_id: lifeOfPablo[0]._id
       },
@@ -612,7 +612,7 @@ const main = async () => {
   ]
 
   await Song.insertMany(songs)
-  console.log('Created songss with albums!')
+  console.log('Created songs with albums!')
 }
 const run = async () => {
   await main()

@@ -17,4 +17,8 @@ router.post('/albums', controllers.createAlbum)
 router.put('/albums/:id', controllers.updateAlbum)
 router.delete('/albums/:id', controllers.deleteAlbum)
 
+// PLAYLIST //
+router.get('/playlists', controllers.getAllPlaylist)
+router.post('/playlists', controllers.createPlaylist)
+
 module.exports = router;

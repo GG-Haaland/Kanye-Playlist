@@ -23,6 +23,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.navbar {
+  /* background-image: url("https://www.pluggedin.com/wp-content/uploads/2020/01/Kanye-West-The-Life-of-Pablo-review-image638x366.jpg-1200x688.jpeg"); */
+  background-image: url("vhttps://images.genius.com/3dd435384396a2abbac6dbc4e84f9bb6.500x500x19.gif");
+  
+}
 
 .App-link {
   color: #61dafb;
