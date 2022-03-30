@@ -12,9 +12,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-nav{
-  display:flex;
-  background-color:aquamarine;
+h1{
+  font-size: 40px;
 }
 
 .App-header {
@@ -42,10 +41,58 @@ nav{
   padding: 1em;
   min-height: 2em;
   font-family: 'Georgia';
+  opacity: 0.85;
+  padding-left:30px;
+  padding-right:30px;
+ 
+}
+.nav-links li{
+  
+    display: inline;
+    COLOR: "Red";
+    padding-right: 30px;
+    font-size: 15px;
+  
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.album-grid {
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin: 5%; */
+  text-align: center;
+  display: inline-block;
+}
+.card {
+  max-width: 300px;
+  max-height: 380px;
+  border-radius: 4px;
+  /* background-color: #62e979; */
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+
+img {
+  cursor: pointer;
+  max-width: 600px;
+  max-height: 600px;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+.sunday{
+  width: 600px;
+  height: 500px;
 }
 
 @keyframes App-logo-spin {

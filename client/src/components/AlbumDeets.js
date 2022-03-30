@@ -8,9 +8,13 @@ const AlbumDetails = (props) => {
   const [selectedAlbum, setAlbum] = useState({});
 
   useEffect(() => {
-    const chosenAlbum = props.album.find((album) => album.id_number === id);
-    setAlbum(chosenAlbum);
-  }, [props.album]);
+    const chosenAlbum = props.albums.find(
+      (albums) => albums._id === id
+     )
+    setAlbum(chosenAlbum)
+      console.log(chosenAlbum)
+  }, []);
+
 
   return selectedAlbum ? (
     <div className="detail">
@@ -29,8 +33,9 @@ const AlbumDetails = (props) => {
       </div>
       <div className="info-wrapper">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h3>Details {selectedAlbum.details}</h3>
-          <h3>whateverelse {selectedAlbum.whateverelse}</h3>
+        <h3>features: {selectedAlbum.features}</h3>
+          <h4>About {selectedAlbum.description}</h4>
+          
         </div>
         <p>{selectedAlbum.song}</p>
       </div>

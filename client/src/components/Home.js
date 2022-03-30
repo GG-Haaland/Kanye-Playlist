@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState,  } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import Search from '../components/Search'
-import Albumlist from '../components/Albumlist.js'
+import AlbumList from './AlbumList.js'
 
 
 const Home = (props) => {
@@ -45,7 +45,7 @@ const Home = (props) => {
         <h3>Showing Results for: {searchQuery}</h3>
         <section className="search-results container-grid">
           {searchResults.map((result) => {
-            return <Albumlist key={result._id} onClick={() => showAlbums(result)} image={result.img} name={result.name} />
+            return <AlbumList key={result._id} onClick={() => showAlbums(result)} image={result.img} name={result.name} />
 
           })}
         </section>

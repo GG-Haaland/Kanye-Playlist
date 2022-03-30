@@ -49,39 +49,12 @@ const main = async () => {
     {
         name:'The Life of Pablo',
         description:`The seventh studio album by American rapper and producer Kanye West. It was released on February 14, 2016, through GOOD Music and distributed by Def Jam Recordings. Recording sessions took place from 2013 to 2016, in Italy, Mexico, Canada, and the United States. West and a variety of producers, including co-executive producers Rick Rubin and Noah Goldstein handled production. West enlisted guest vocals for the album from Chance the Rapper, Kirk Franklin, Kid Cudi, Desiigner, Rihanna, The Weeknd, Ty Dolla Sign, Post Malone, Kendrick Lamar, Sia, Vic Mensa, Chris Brown, Young Thug, and Sampha. The Life of Pablo received five nominations at the 2017 Grammy Awards, including Best Rap Album, though the Album of the Year rejection was deemed a snub by numerous publications. Following Tidal's initial disclosure of its streaming data and its release to competing streaming services, the album debuted at number one on the US Billboard 200, becoming the first to reach the summit primarily through streaming, and was ultimately certified double platinum by the Recording Industry Association of America (RIAA). It also debuted at number one in Norway, and in the top ten in Canada, Denmark, Finland, Ireland, the Netherlands, and Sweden.`,
-        image:'https://images.genius.com/3dd435384396a2abbac6dbc4e84f9bb6.500x500x19.gif',
+        image: 'https://i.gifer.com/63HP.gif',
         released:'February 14, 2016',
         length: '66:01',
         platinum: '2x'
     },
-    // {
-    //     name:'',
-    //     description:'',
-    //     image:'',
-    //     released:'',
-    //     length: ''
-    // },
-    // {
-    //     name:'',
-    //     description:'',
-    //     image:'',
-    //     released:'',
-    //     length: ''
-    // },
-    // {
-    //     name:'',
-    //     description:'',
-    //     image:'',
-    //     released:'',
-    //     length: ''
-    // },
-    // {
-    //     name:'',
-    //     description:'',
-    //     image:'',
-    //     released:'',
-    //     length: ''
-    // }
+   
    
   ]
 
