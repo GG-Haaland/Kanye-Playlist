@@ -27,6 +27,7 @@ const Playlist = (props) => {
 
   return (
     <div>
+       <div className="sunday"></div>
     <h1>Create a Pla-YE List </h1>
     <form onSubmit={ handleSubmit }>
       <input type="text" value={'newAlbum.name'} onChange={ props.handleChange} name={'name'} placeholder={'name'} />
@@ -35,6 +36,8 @@ const Playlist = (props) => {
       {/* <input type="text" value={newAlbum.price} onChange={ props.handleChange} name={'price'} placeholder={'price'} /> */}
       <button>Submit</button>
     </form>
+   
+    {/* <img  src="https://i.makeagif.com/media/3-11-2019/Or5DqK.gif"/> */}
     </div>
   );
 }
