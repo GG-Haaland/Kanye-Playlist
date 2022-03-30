@@ -6,28 +6,28 @@ import axios from 'axios'
 
 
 const SongList = () => {
-  useEffect(() =>{
-    getSongs()
-  },[])
+  
   let navigate = useNavigate();  
   const showSong = (song) => {
-    navigate(`${song.id_number}`);
+    navigate(`${song._id}`);
   };
 
   const [songs,setSongs] = useState([])
   
   const getSongs = async() => {
-    const songList = await axios.get('http://localhost:4000/songs') 
+    const songList = await axios.get('http://localhost:4000/api/songs') 
     setSongs(songList.data.song)
     console.log(songList)
   }
   
-
+  useEffect(() =>{
+    getSongs()
+  },[])
 
   return (
     <div className="album-grid">
     {songs.map((song) => (
-      <div className="card" onClick={() => showSong(song.name)} key={song.id_number}>
+      <div className="card" onClick={() => showSong(song)} key={song._id}>
         {/* <img style={{ display: "block" }} src={song.image} alt={song.name} /> */}
         <h3>{song.name}</h3>
         <h4>{song.features}</h4>

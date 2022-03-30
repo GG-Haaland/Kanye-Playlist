@@ -11,6 +11,7 @@ import Search from './components/Search'
 // import albumArray from './dummyAlbums'
 import axios from 'axios'
 import Song from './components/Song'
+import SongDeets from './components/SongDeets'
 
 function App() {
   const [albums, setAlbum] = useState([])
@@ -26,13 +27,13 @@ function App() {
 
   const getAlbums = async() => {
     const albumList = 
-    await axios.get('http://localhost:4000/albums')
+    await axios.get('http://localhost:4000/api/albums')
     console.log(albumList.data.albums)
     setAlbum(albumList.data.albums)
   }
 
   const getSongs = async() => {
-    const songsList = await axios.get('http://localhost:3023/api/songs')
+    const songsList = await axios.get('http://localhost:4000/api/songs')
     console.log(songsList)
     setSongs(songsList.data)
   }  
@@ -84,8 +85,9 @@ function App() {
           <Route path="/albums" element={ <AlbumList/>} />
           <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} />} />
           {/* <Route path="/albums/:id" element={ <AlbumDeets  />} /> */}
-          {/* <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} />} /> */}
+          
           <Route path="/songs" element={ <Song/>} />
+          <Route path="/songs/:id" element={ <SongDeets albums={albums} getAlbums={getAlbums} />} />
           <Route path='new' element={ <Playlist 
                             newPlaylist= {newPlaylist} 
                             handleChange={handleChange} 

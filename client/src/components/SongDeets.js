@@ -2,24 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // routes
 
-const AlbumDeets = (props) => {
+const SongDeets = (props) => {
   let { id } = useParams();
  
-  const [selectedAlbum, setAlbum] = useState({});
+  const [selectedSong, setSong] = useState({});
 
   useEffect(() => {
-    const chosenAlbum = props.albums.find(
-      (albums) => albums._id === id
+    const chosenSong = props.song.find(
+      (song) => song._id === id
      )
-    setAlbum(chosenAlbum)
-      console.log(chosenAlbum)
+    setSong(chosenSong)
+      console.log(chosenSong)
   }, []);
 
 
-  return selectedAlbum ? (
+  return selectedSong ? (
     <div className="detail">
       <div className="detail-header">
-        <img src={selectedAlbum.image} alt={selectedAlbum.name} />
+        <img src={selectedSong.album_id} alt={selectedSong.name} />
         <div
           style={{
             minWidth: "30em",
@@ -28,19 +28,19 @@ const AlbumDeets = (props) => {
             alignItems: "center",
           }}
         >
-          <h1>{selectedAlbum.name}</h1>
+          <h1>{selectedSong.name}</h1>
         </div>
       </div>
       <div className="info-wrapper">
         <div style={{ display: "inline-block", justifyContent: "space-between", textAlign: "center" }}>
-          <h3>RELEASE DATE: {selectedAlbum.released}</h3>
-          <h4>About {selectedAlbum.description}</h4>
+          <h3>RELEASE DATE: {selectedSong.released}</h3>
+          <h4>About {selectedSong.description}</h4>
           
         </div>
-        <p>{selectedAlbum.song}</p>
+        <p>{selectedSong.song}</p>
       </div>
     </div>
   ) : null;
 };
 
-export default AlbumDeets;
+export default SongDeets;

@@ -8,15 +8,15 @@ const AlbumList = () => {
 
   let navigate = useNavigate();  
   const showAlbum = (album) => {
-    navigate(`${album.id_number}`);
+    navigate(`${album._id}`);
   };
 
   const [albums,setAlbums] = useState([])
   
   const getAlbums = async() => {
-    const albumList = await axios.get('http://localhost:4000/albums')
+    const albumList = await axios.get('http://localhost:4000/api/albums')
     setAlbums(albumList.data.albums)
-    console.log(albums)
+    console.log(albumList)
   }
 
   useEffect(() =>{
