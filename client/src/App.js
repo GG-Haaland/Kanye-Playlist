@@ -12,19 +12,20 @@ import Search from './components/Search'
 import axios from 'axios'
 import Song from './components/Song'
 import SongDeets from './components/SongDeets'
+import About from './components/About'
 
 function App() {
   const [albums, setAlbum] = useState([])
   const [songs, setSongs] = useState([])
-  const [playlists, setPlaylist] = useState([])
-  const [newPlaylist, setNewPlaylist] = useState({
-    id: '',
-    name: '',
-    image: '',
-    songs: [],
-  })
+  const [newAlbum, setNewAlbum] = useState({
+    name:'',
+    image:''
+   
+})
+ 
+ 
 
-
+///////////// ALBUM API CALLS //////////////////////
   const getAlbums = async() => {
     const albumList = 
     await axios.get('http://localhost:4000/api/albums')
@@ -32,40 +33,38 @@ function App() {
     setAlbum(albumList.data.albums)
   }
 
+    //////////// SONG API CALL //////////////////////////////////
   const getSongs = async() => {
     const songsList = await axios.get('http://localhost:4000/api/songs')
     console.log(songsList)
     setSongs(songsList.data.song)
   }  
 
-  // const getPlaylist = async() => {
-  //   const playlistsList = await axios.get('http://localhost:3023/api/playlists')
-  //   console.log(playlistsList)
-  //   setNewPlaylists(playlistsList.data)
-  // }  
-
-  
-  const addPlaylist = (e) => {
+  //////// CREATE ALBUMS //////////////////////////////////////////////////////
+  const addAlbum = (e) => {
     e.preventDefault()
-    const currentPlaylist = playlists
-    const createdPlaylist = {
-      ...newPlaylist,
-      id: parseInt(playlists.length + 1),
-      name: parseInt(newPlaylist.name)
+    const currentAlbum = albums
+    const createdAlbum = {
+      ...newAlbum,
+      id: parseInt(albums.length + 1),
+      name: parseInt(newAlbum.name)
     }
-    currentPlaylist.push(createdPlaylist)
-    setPlaylist(currentPlaylist)
-    setNewPlaylist({ id: '', name: '', image: '', songs: []})
+    currentAlbum.push(createdAlbum)
+    setAlbum(currentAlbum)
+    setNewAlbum({ name:'', image:'',
+    
+  })
   }
 
   const handleChange = (e) => {
-    setNewPlaylist({ ...newPlaylist, [e.target.name]: e.target.value })
+    setNewAlbum({ ...newAlbum, [e.target.name]: e.target.value })
   }
 
   useEffect (() => {
     getAlbums()
     getSongs()
-    // getPlaylist()
+    // addAlbum()
+  
   },[])
 
 
@@ -80,19 +79,15 @@ function App() {
       <main>
       <Routes>
           <Route path='/' element={ <Home /> } />
-          <Route path='/albums' element={ <AlbumList/> } />
-          <Route path='/playlists' element={ <PlaylistForm />} />
-          <Route path="/albums" element={ <AlbumList/>} />
+          <Route path="/albums" element={ <AlbumList albums={albums} newAlbum= {newAlbum} />} />
           <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} songs={songs} getSongs={getSongs} />} />
-                                          
-          
-          
-          <Route path="/songs" element={ <Song/>} />
+          <Route path="/songs" element={ <Song songs={songs}/>} />
           <Route path="/songs/:id" element={ <SongDeets songs={songs} getSongs={getSongs} />} />
-          <Route path='new' element={ <PlaylistForm
-                            newPlaylist= {newPlaylist} 
+          <Route path='/playlists' element={ <PlaylistForm
+                            newAlbum= {newAlbum} 
                             handleChange={handleChange} 
-                            addPlaylist={addPlaylist}/>} />
+                            addAlbum={addAlbum}/>} />
+          <Route path='/about' element={ <About /> } />
         </Routes>
         </main>
     </div>
@@ -126,3 +121,28 @@ export default App;
     // useEffect(() =>{
     //   getAlbums()
     // },[])
+
+
+     // const [createdAlbum, setCreatedAlbum]= useState({
+  //       name:'',
+  //       description:``,
+  //       image:'',
+  //       image2: '',
+  //       released:'',
+  //       length: '',
+  //       platinum:''
+  // })
+  // const [playlists, setPlaylist] = useState([])
+
+    // const getPlaylist = async() => {
+  //   const playlistsList = await axios.get('http://localhost:3023/api/playlists')
+  //   console.log(playlistsList)
+  //   setNewPlaylists(playlistsList.data)
+  // }  
+
+    // const createAlbum = async() => {
+  //   const albumList = 
+  //   await axios.post('http://localhost:4000/api/albums')
+  //   console.log(albumList.data.albums)
+  //   setCreatedAlbum(albumList.data.albums)
+  // }

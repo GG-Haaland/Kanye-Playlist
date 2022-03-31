@@ -54,7 +54,7 @@ const AlbumDeets = (props) => {
                   )}
               </div>
               <div>
-                <Link to='/songs'><button>Back</button></Link>
+                <Link to='/songs'><button>Songs</button></Link>
               </div>
           
       </div>

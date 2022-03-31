@@ -3,7 +3,7 @@ const Schema  = mongoose.Schema
 
 const Playlist = new Schema(
   {
-    name: { type: String, required: true },
+    name: { type: String, required: false },
     image: { type: String, required: false },
     songs: { type: String, required: false },
   },

@@ -2,23 +2,26 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import PlaylistForm from './Playlist'
 
 
 const AlbumList = () => {
 
   let navigate = useNavigate();  
+
   const showAlbum = (album) => {
     navigate(`${album._id}`);
   };
 
   const [albums,setAlbums] = useState([])
-  
+ 
   const getAlbums = async() => {
     const albumList = await axios.get('http://localhost:4000/api/albums')
     setAlbums(albumList.data.albums)
     console.log(albumList)
   }
-
+  
+  
   useEffect(() =>{
     getAlbums()
   },[])
@@ -33,7 +36,11 @@ const AlbumList = () => {
         <h3>{album.name}</h3>
       </div>
     ))}
+    {/* <div>
+      <PlaylistForm/>
+    </div> */}
   </div>
+  
    
   
   );
