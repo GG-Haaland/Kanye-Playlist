@@ -6,6 +6,7 @@ const Album = new Schema(
     name: { type: String, required: false },
     description: { type: String, required: false },
     image: { type: String, required: false },
+    image2: { type: String, required: false },
     released: { type: String, required: false },
     length: { type: String, required: false }, 
     platinum: { type: String, required: false },

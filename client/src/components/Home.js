@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 // import axios from 'axios'
 import Search from '../components/Search'
 import AlbumList from './AlbumList.js'
+import AlbumDeets from './AlbumDeets'
 
 
 const Home = (props) => {
@@ -21,8 +22,8 @@ const Home = (props) => {
     // const albums = await axios.get('http://localhost:4000/albums')
    
     const albums = props.albums
-    let results = albums.filter((album) => {
-      return album.name.toLowerCase().includes(searchQuery.toLowerCase())
+    let results = albums.filter((albums) => {
+      return albums.name.toLowerCase().includes(searchQuery.toLowerCase())
     })
     console.log(results)
 
@@ -33,8 +34,8 @@ const Home = (props) => {
 
   let navigate = useNavigate()
 
-  const showAlbums = (Albums) => {
-    navigate(`Albums/${Albums._id}`)
+  const showAlbums = (albums) => {
+    navigate(`albums/${albums._id}`)
   }
 
   return (
@@ -45,10 +46,11 @@ const Home = (props) => {
         <h3>Showing Results for: {searchQuery}</h3>
         <section className="search-results container-grid">
           {searchResults.map((result) => {
-            return <AlbumList key={result._id} onClick={() => showAlbums(result)} image={result.img} name={result.name} />
+            return <AlbumDeets key={result._id} onClick={() => showAlbums(result)} image={result.imgage} name={result.name} />
 
           })}
         </section>
+        <img className="kanye-head" src="https://lh3.googleusercontent.com/M5w4BUCEXfD4NS_Lry8ixxBuRepcWbc2HrRJU3SnfbT7-QlPXgmtASHACCQsyz5zLAfOQ7gYvpn7QxuWQ19Rz3RhGeiFlPhK2MXpOkyMn8-KmDVGE3-thUMM6YCvqjtHWU_pGFr8Tg=w2400" /> 
       </div>
       </div>
   )

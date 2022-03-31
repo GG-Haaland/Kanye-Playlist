@@ -28,8 +28,8 @@ const AlbumList = () => {
   return (
     <div className="album-grid">
     {albums.map((album) => (
-      <div className="card" onClick={() => showAlbum(album)} key={album.id_number}>
-        <img style={{ display: "block" }} src={album.image} alt={album.name} />
+      <div className="card" onClick={() => showAlbum(album)} key={album._id}>
+        <img className="album-img" style={{ display: "inline-block" }} src={album.image} alt={album.name}  />
         <h3>{album.name}</h3>
       </div>
     ))}

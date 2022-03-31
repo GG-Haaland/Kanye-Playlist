@@ -5,7 +5,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import Home from './components/Home'
 import Nav from './components/Nav'
 import AlbumList from './components/AlbumList'
-import Playlist from './components/Playlist'
+import PlaylistForm from './components/Playlist'
 import AlbumDeets from './components/AlbumDeets'
 import Search from './components/Search'
 // import albumArray from './dummyAlbums'
@@ -35,7 +35,7 @@ function App() {
   const getSongs = async() => {
     const songsList = await axios.get('http://localhost:4000/api/songs')
     console.log(songsList)
-    setSongs(songsList.data)
+    setSongs(songsList.data.song)
   }  
 
   // const getPlaylist = async() => {
@@ -74,21 +74,22 @@ function App() {
       {/* <h1>PLA-YE   LIST</h1> */}
       <header >
         <Nav />
-        <Search />
+        {/* <Search /> */}
       </header>
      
       <main>
       <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/albums' element={ <AlbumList/> } />
-          <Route path='/playlists' element={ <Playlist />} />
+          <Route path='/playlists' element={ <PlaylistForm />} />
           <Route path="/albums" element={ <AlbumList/>} />
-          <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} />} />
-          {/* <Route path="/albums/:id" element={ <AlbumDeets  />} /> */}
+          <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} songs={songs} getSongs={getSongs} />} />
+                                          
+          
           
           <Route path="/songs" element={ <Song/>} />
-          <Route path="/songs/:id" element={ <SongDeets albums={albums} getAlbums={getAlbums} />} />
-          <Route path='new' element={ <Playlist 
+          <Route path="/songs/:id" element={ <SongDeets songs={songs} getSongs={getSongs} />} />
+          <Route path='new' element={ <PlaylistForm
                             newPlaylist= {newPlaylist} 
                             handleChange={handleChange} 
                             addPlaylist={addPlaylist}/>} />
