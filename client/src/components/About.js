@@ -1,11 +1,13 @@
 import React from 'react';
+import ImageSlider from './ImageSlider';
 
+import { SliderData } from './SliderData'
 const About = (props) => {
   
     return (
-      <div className="card park-card" onClick={props.onClick}>
+      <div >
         <div className="img-wrapper">
-          <h1>ABOUT PAGE</h1>
+        <ImageSlider slides={SliderData}/>
         </div>
       </div>
     )

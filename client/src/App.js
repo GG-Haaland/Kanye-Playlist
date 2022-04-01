@@ -14,6 +14,7 @@ import Song from './components/Song'
 import SongDeets from './components/SongDeets'
 import About from './components/About'
 import ImageSlider from './components/ImageSlider'
+import EditAlbumForm from './components/EditAlbumForm'
 
 function App() {
   const [albums, setAlbum] = useState([])
@@ -21,8 +22,9 @@ function App() {
   const [newAlbum, setNewAlbum] = useState({
     name:'',
     image:''
-   
-})
+  })
+  const [updateAlbum, setUpdateAlbum] = useState()
+
  
  
 
@@ -73,10 +75,10 @@ function App() {
 
   return (
     <div className="App-header">
-      {/* <h1>PLA-YE   LIST</h1> */}
+     
       <header >
         <Nav />
-        {/* <Search /> */}
+        
       </header>
      
       <main>
@@ -84,6 +86,9 @@ function App() {
           <Route path='/' element={ <Home albums={albums} /> } />
           <Route path="/albums" element={ <AlbumList albums={albums} newAlbum= {newAlbum} />} />
           <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} songs={songs} getSongs={getSongs} />} />
+          {/* <Route path="/albums/update-albums/:id" element={ <EditAlbumForm newAlbum= {newAlbum} 
+                            handleChange={handleChange} 
+                            addAlbum={addAlbum}/>} /> */}
           <Route path="/songs" element={ <Song songs={songs}/>} />
           <Route path="/songs/:id" element={ <SongDeets songs={songs} getSongs={getSongs} />} />
           <Route path='/playlists' element={ <PlaylistForm
@@ -100,52 +105,4 @@ function App() {
 export default App;
 
 
-  // const addPlaylist = (e) => {
-  //   e.preventDefault()
-  //   const currentPlaylist = 
-  //   const createdPark = {
-  //     ...newPark,
-  //     id: parseInt(parks.length + 1),
-  //     price: parseInt(newPark.price)
-  //   }
-  //   currentParks.push(createdPark)
-  //   setPark(currentParks)
-  //   setNewPark({ id: '', description: '', location: '', address: '', url: '', img: '' })
-  // }
-
-
-   
-
-    // const getAlbums = async() => {
-    //   const albumList = await fetch('https://kany-api.herokuapp.com/albums') /*axios.get('https://jurassic-master.herokuapp.com/api/dinos')*/
-    //   setAlbums(albumList.id)
-    //   console.log(albumList)
-    // }
-    // useEffect(() =>{
-    //   getAlbums()
-    // },[])
-
-
-     // const [createdAlbum, setCreatedAlbum]= useState({
-  //       name:'',
-  //       description:``,
-  //       image:'',
-  //       image2: '',
-  //       released:'',
-  //       length: '',
-  //       platinum:''
-  // })
-  // const [playlists, setPlaylist] = useState([])
-
-    // const getPlaylist = async() => {
-  //   const playlistsList = await axios.get('http://localhost:3023/api/playlists')
-  //   console.log(playlistsList)
-  //   setNewPlaylists(playlistsList.data)
-  // }  
-
-    // const createAlbum = async() => {
-  //   const albumList = 
-  //   await axios.post('http://localhost:4000/api/albums')
-  //   console.log(albumList.data.albums)
-  //   setCreatedAlbum(albumList.data.albums)
-  // }
+  

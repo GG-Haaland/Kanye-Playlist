@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 import axios from 'axios'
-// routes
+import EditAlbumForm from './EditAlbumForm'
+
+// import { useNavigate } from 'react-router-dom'
+
 
 const AlbumDeets = (props) => {
+  // let navigate = useNavigate()
   let { id } = useParams();
  
   const [selectedAlbum, setAlbum] = useState('');
@@ -30,22 +34,17 @@ const AlbumDeets = (props) => {
           }, [props.albums, props.songs, id]);
      
           const deleteAlbum = async (id) => {
-            await axios.delete(`http://localhost:4000/api/albums${id}`)
-            alert(id)
-          }         
+            await axios.delete(`http://localhost:4000/api/albums/${id}`)
+            alert("Album was deleted!")
+            // navigate('/albums')
+          }
+          
+          const updateAlbum = async (id) => {
+            await axios.put(`http://localhost:4000/api/albums/update-albums/:id`)
+            alert("Album was updated!")
+          }
 
-        //   const getArtistAlbums = async (req, res) => {
-        //     try {
-        //         const { id } = req.params
-        //         const artist = await Artist.findById(id).exec()
-        //         const albums = await Album.find({artistName: artist.artistName}).exec()
-        //         return res.status(200).json({ albums })
-        //     } catch (error) {
-        //         return res.status(500).send(error.message)
-        //     }
-        // }
-
-//  if (selectedAlbum) {
+    
 
   return selectedAlbum ? (
   <div className="detail">
@@ -72,6 +71,7 @@ const AlbumDeets = (props) => {
               </div>
               <button onClick={()=>deleteAlbum(id)}> Delete </button>
               {/* <button>Delete</button> */}
+              <EditAlbumForm onClick={()=>updateAlbum(id)}/>
       </div>
     </div>
   </div>
@@ -82,14 +82,16 @@ const AlbumDeets = (props) => {
 
 export default AlbumDeets;
 
+///////////////// GET SONGS TO SHOW ON ALBUMS //////////////////////////////////////////////////////////////////
 
-  {/* <div
-          style={{
-            minWidth: "30em",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-         
-        </div> */}
+    //   const getArtistAlbums = async (req, res) => {
+        //     try {
+        //         const { id } = req.params
+        //         const artist = await Artist.findById(id).exec()
+        //         const albums = await Album.find({artistName: artist.artistName}).exec()
+        //         return res.status(200).json({ albums })
+        //     } catch (error) {
+        //         return res.status(500).send(error.message)
+        //     }
+        // }
+

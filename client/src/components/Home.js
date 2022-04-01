@@ -50,7 +50,7 @@ const Home = (props) => {
 
           })}
         </section>
-        {/* <img className="kanye-head" src="https://lh3.googleusercontent.com/M5w4BUCEXfD4NS_Lry8ixxBuRepcWbc2HrRJU3SnfbT7-QlPXgmtASHACCQsyz5zLAfOQ7gYvpn7QxuWQ19Rz3RhGeiFlPhK2MXpOkyMn8-KmDVGE3-thUMM6YCvqjtHWU_pGFr8Tg=w2400" />  */}
+
       </div>
       
       </div>

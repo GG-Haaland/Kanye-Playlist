@@ -5,10 +5,11 @@ const router = Router();
 router.get('/', (req, res) => res.send('kanyeDatabase!'))
 
 // ALBUMS //
+router.delete('/albums/:id', controllers.deleteAlbum)
 router.get('/albums', controllers.getAllAlbums)
 router.get('/albums/:id', controllers.getAlbumById)
 router.post('/playlists', controllers.createAlbum)
-router.put('/albums/:id', controllers.updateAlbum)
+router.put('/albums/update-album/:id', controllers.updateAlbum)
 router.delete('/albums/:id', controllers.deleteAlbum)
 router.post('/albums/add-new',controllers.createAlbum)
 
@@ -16,13 +17,6 @@ router.post('/albums/add-new',controllers.createAlbum)
 router.get('/songs', controllers.getAllSongs)
 router.get('/songs:id', controllers.getSongById)
 
-// CRUD //
-// router.post('/albums', controllers.createAlbum)
-// router.put('/albums/:id', controllers.updateAlbum)
-// router.delete('/albums/:id', controllers.deleteAlbum)
 
-// PLAYLIST //
-// router.get('/playlists', controllers.getAllPlaylist)
-// router.post('/playlists', controllers.createAlbum)
 
 module.exports = router;

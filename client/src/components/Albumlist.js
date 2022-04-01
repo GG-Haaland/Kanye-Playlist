@@ -52,38 +52,10 @@ const AlbumList = () => {
 export default AlbumList;
 
 
-// import logo from '../logo.svg'
-// import { useNavigate } from "react-router-dom";
 
 
 
 
 
 
-// const AlbumList = (props) => {
 
-  
-//       let navigate = useNavigate()
-    
-//       const showAlbums = (albums) => {
-//         navigate(`${albums._id}`)
-//       }
-//     console.log(props.albums)
-//       return (
-//         <div className="parks-grid">
-//           {
-//           props.albums.map((albums) => (
-//             <div className="album-card" onClick={() => showAlbums(albums)} key={albums._id}>
-//               <h3>{albums.name}</h3>
-//               <img style={{ display: 'block' }} src={albums.img} alt={albums.name} />
-              
-//             </div>
-//           ))} 
-//         </div>
-        
-//       )
-//     }
-    
-//     export default AlbumList
-
-// export default AlbumList

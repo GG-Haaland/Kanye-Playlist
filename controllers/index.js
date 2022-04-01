@@ -29,7 +29,7 @@ const getAlbumById = async (req, res) => {
 const updateAlbum = async (req, res) => {
     try {
         const { id } = req.params;
-        await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, album) => {
+        await Album.findByIdAndUpdate(id, req.body, (err, album) => {
             if (err) {
                 res.status(500).send(err);
             }
