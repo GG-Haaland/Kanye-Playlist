@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import Search from '../components/Search'
 import AlbumList from './AlbumList.js'
 import AlbumDeets from './AlbumDeets'
-
+import ImageSlider from './ImageSlider'
+import { SliderData } from './SliderData'
 
 const Home = (props) => {
 
@@ -19,11 +20,9 @@ const Home = (props) => {
   }
 
   const searchOnSubmit = function (e)  {
-    // const albums = await axios.get('http://localhost:4000/albums')
-   
     const albums = props.albums
-    let results = albums.filter((albums) => {
-      return albums.name.toLowerCase().includes(searchQuery.toLowerCase())
+    let results = albums.filter((album) => {
+      return album.toLowerCase().includes(searchQuery.toLowerCase())
     })
     console.log(results)
 
@@ -40,7 +39,8 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <h1>Albums! </h1>
+      <ImageSlider slides={SliderData}/>
+      <h1>Search Albums! </h1>
       <Search onSubmit={searchOnSubmit} onChange={searchOnChange} value={searchQuery}/>
       <div className="search">
         <h3>Showing Results for: {searchQuery}</h3>
@@ -50,8 +50,9 @@ const Home = (props) => {
 
           })}
         </section>
-        <img className="kanye-head" src="https://lh3.googleusercontent.com/M5w4BUCEXfD4NS_Lry8ixxBuRepcWbc2HrRJU3SnfbT7-QlPXgmtASHACCQsyz5zLAfOQ7gYvpn7QxuWQ19Rz3RhGeiFlPhK2MXpOkyMn8-KmDVGE3-thUMM6YCvqjtHWU_pGFr8Tg=w2400" /> 
+        {/* <img className="kanye-head" src="https://lh3.googleusercontent.com/M5w4BUCEXfD4NS_Lry8ixxBuRepcWbc2HrRJU3SnfbT7-QlPXgmtASHACCQsyz5zLAfOQ7gYvpn7QxuWQ19Rz3RhGeiFlPhK2MXpOkyMn8-KmDVGE3-thUMM6YCvqjtHWU_pGFr8Tg=w2400" />  */}
       </div>
+      
       </div>
   )
 }

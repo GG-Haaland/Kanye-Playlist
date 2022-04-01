@@ -20,10 +20,13 @@ const AlbumList = () => {
     setAlbums(albumList.data.albums)
     console.log(albumList)
   }
-  
+  const deleteAlbum = async (album) => {
+    await axios.get('http://localhost:4000/api/albums')
+  }
   
   useEffect(() =>{
     getAlbums()
+    deleteAlbum()
   },[])
   
 

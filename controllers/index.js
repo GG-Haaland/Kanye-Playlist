@@ -58,7 +58,7 @@ const createAlbum = async (req, res) => {
 const deleteAlbum = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleted = await Album.findByIdAndDelete(id, req.body)
+        const deleted = await Album.findByIdAndDelete(id)
         if (deleted) {
             return res.status(200).send("Album deleted");
         }

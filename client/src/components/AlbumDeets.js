@@ -28,8 +28,22 @@ const AlbumDeets = (props) => {
             console.log(selectedSongs)
               
           }, [props.albums, props.songs, id]);
+     
+          const deleteAlbum = async (id) => {
+            await axios.delete(`http://localhost:4000/api/albums${id}`)
+            alert(id)
+          }         
 
-
+        //   const getArtistAlbums = async (req, res) => {
+        //     try {
+        //         const { id } = req.params
+        //         const artist = await Artist.findById(id).exec()
+        //         const albums = await Album.find({artistName: artist.artistName}).exec()
+        //         return res.status(200).json({ albums })
+        //     } catch (error) {
+        //         return res.status(500).send(error.message)
+        //     }
+        // }
 
 //  if (selectedAlbum) {
 
@@ -56,7 +70,8 @@ const AlbumDeets = (props) => {
               <div>
                 <Link to='/songs'><button>Songs</button></Link>
               </div>
-          
+              <button onClick={()=>deleteAlbum(id)}> Delete </button>
+              {/* <button>Delete</button> */}
       </div>
     </div>
   </div>

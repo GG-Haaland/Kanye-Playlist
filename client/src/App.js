@@ -13,6 +13,7 @@ import axios from 'axios'
 import Song from './components/Song'
 import SongDeets from './components/SongDeets'
 import About from './components/About'
+import ImageSlider from './components/ImageSlider'
 
 function App() {
   const [albums, setAlbum] = useState([])
@@ -55,6 +56,8 @@ function App() {
     
   })
   }
+  ///// DELETE ALBUMS //////////////////////////////////////////////////////
+ 
 
   const handleChange = (e) => {
     setNewAlbum({ ...newAlbum, [e.target.name]: e.target.value })
@@ -78,7 +81,7 @@ function App() {
      
       <main>
       <Routes>
-          <Route path='/' element={ <Home /> } />
+          <Route path='/' element={ <Home albums={albums} /> } />
           <Route path="/albums" element={ <AlbumList albums={albums} newAlbum= {newAlbum} />} />
           <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} songs={songs} getSongs={getSongs} />} />
           <Route path="/songs" element={ <Song songs={songs}/>} />
