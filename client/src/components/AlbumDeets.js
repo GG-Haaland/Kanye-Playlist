@@ -40,11 +40,12 @@ const AlbumDeets = (props) => {
           }
           
           const updateAlbum = async (id) => {
-            await axios.put(`http://localhost:4000/api/albums/update-albums/:id`)
+            await axios.put(`http://localhost:4000/api/albums/update-new/:id`)
             alert("Album was updated!")
           }
 
-    
+        function refreshPage() { 
+            window. location. reload(false); } 
 
   return selectedAlbum ? (
   <div className="detail">

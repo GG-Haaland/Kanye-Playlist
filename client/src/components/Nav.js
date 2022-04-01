@@ -17,14 +17,9 @@ const Nav = () => {
         <li><Link to='/playlists'>PLAYLIST</Link></li>
         <li><Link to='/songs'>SONGS</Link></li>
         <li><Link to='/about'><img className="kanye-head"src="https://lh3.googleusercontent.com/M5w4BUCEXfD4NS_Lry8ixxBuRepcWbc2HrRJU3SnfbT7-QlPXgmtASHACCQsyz5zLAfOQ7gYvpn7QxuWQ19Rz3RhGeiFlPhK2MXpOkyMn8-KmDVGE3-thUMM6YCvqjtHWU_pGFr8Tg=w2400"/></Link></li>
-        
         </ul>
         
-        {/* <Link to='/'>Home</Link>
-        <Link to='/albums'>Albums!</Link>
-        <Link to='/playlists'>Playlist</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/songs'>Songs</Link> */}
+     
         
         <div className='bckbtn' onClick={() => navigate(-1)}>Back</div>
       </div>

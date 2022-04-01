@@ -8,13 +8,13 @@ const EditAlbumForm = (props) => {
   let navigate = useNavigate()
   
     // const url = 'http://localhost:4000/api/albums'
-    const url = `http://localhost:4000/api/albums/update-album/:id`
+    const url = `http://localhost:4000/api/albums/update-new/:id`
     const [data, setData] = useState({
           name: '',
           image: '',
           
    })
-    function submit (e) {
+    const submit = async(e) => {
          e.preventDefault()
           axios.put(url, {
           name: data.name,

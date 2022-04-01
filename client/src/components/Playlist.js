@@ -7,7 +7,7 @@ import EditAlbum from './EditAlbum'
 
 const PlaylistForm = (props) => {
   let navigate = useNavigate()
-  
+
  
     const url = 'http://localhost:4000/api/albums/add-new'
     const [data, setData] = useState({

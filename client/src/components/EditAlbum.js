@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PlaylistForm from "./Playlist";
+import EditAlbumForm from './EditAlbumForm'
   
 // EditStudent Component
 const EditAlbum = (props) => {
@@ -43,13 +44,9 @@ const EditAlbum = (props) => {
   
   // Return student form
   return (
-    <PlaylistForm 
-      initialValues={formValues}
-      onSubmit={onSubmit}
-      enableReinitialize
-    >
-      Update Album
-    </PlaylistForm>
+    <EditAlbumForm />
+      
+   
   );
 };
   
