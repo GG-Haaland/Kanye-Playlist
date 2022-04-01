@@ -1,12 +1,7 @@
-
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from 'axios'
+import EditAlbumForm from './EditAlbumForm'
 // routes
 
 const SongDeets = (props) => {
@@ -20,7 +15,13 @@ const SongDeets = (props) => {
      )
     setSong(selectedSong)
       console.log(selectedSong)
-  }, [id]);
+  }, [props.songs, id]);
+
+  const deleteSong = async (id) => {
+    await axios.delete(`http://localhost:4000/api/songs/${id}`)
+    alert("Song was deleted!")
+    // navigate('/albums')
+  }
 
 
   return selectedSong ? (
@@ -33,9 +34,10 @@ const SongDeets = (props) => {
           <h3>{selectedSong.name}</h3>
           <h3>{selectedSong.features}</h3>
           <h4>{selectedSong.length}</h4>
-          
+          <button onClick={()=>deleteSong(id)}> Delete </button>
         </div>
         <p>{selectedSong.song}</p>
+        <EditAlbumForm />
       </div>
     </div>
   ) : null;

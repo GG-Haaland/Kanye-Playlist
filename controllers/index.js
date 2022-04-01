@@ -26,18 +26,26 @@ const getAlbumById = async (req, res) => {
     }
 }
 
+// const updateAlbum = async (req, res) => {
+//     try {
+//         const { id } = req.params;
+//         await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, album) => {
+//             if (err) {
+//                 res.status(500).send(err);
+//             }
+//             if (!album) {
+//                 res.status(500).send('Album not found!');
+//             }
+//             return res.status(200).json(album);
+//         })
+//     } catch (error) {
+//         return res.status(500).send(error.message);
+//     }
+// }
 const updateAlbum = async (req, res) => {
     try {
-        const { id } = req.params;
-        await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, album) => {
-            if (err) {
-                res.status(500).send(err);
-            }
-            if (!album) {
-                res.status(500).send('Album not found!');
-            }
-            return res.status(200).json(album);
-        })
+        const album = await Album.findByIdAndUpdate(req.params.id, req.body, { new: true})
+        res.status(200).json(album)
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -92,6 +100,21 @@ const getAllSongs = async (req, res) => {
     }
 }
 
+const deleteSong = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deleted = await Song.findByIdAndDelete(id)
+        if (deleted) {
+            return res.status(200).send("Album deleted");
+        }
+        throw new Error("Album not found");
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+
+
 
 
 /////////////// PLAYLIST FUNCTIONS //////////////////
@@ -115,6 +138,21 @@ const getAllPlaylist = async (req, res) => {
     } catch (error) {
         return res.status(500).send(error.message);
     }
+}
+
+
+module.exports = {
+    
+    getAllAlbums,
+    getAlbumById,
+    updateAlbum,
+    createAlbum,
+    deleteAlbum,
+    getAllSongs,
+    getSongById,
+    createPlaylist,
+    getAllPlaylist,
+    deleteSong,
 }
 
 // const updateAlbum = async (req, res) => {
@@ -146,20 +184,21 @@ const getAllPlaylist = async (req, res) => {
 //         return res.status(500).send(error.message);
 //     }
 // }
+// const updateSong = async (req, res) => {
+//     try {
+//         const { id } = req.params;
+//         await Song.findByIdAndUpdate(id, req.body, { new: false }, (err, song) => {
+//             if (err) {
+//                 res.status(500).send(err);
+//             }
+//             if (!song) {
+//                 res.status(500).send('Song not found!');
+//             }
+//             return res.status(200).json(song);
+//         })
+//     } catch (error) {
+//         return res.status(500).send(error.message);
+//     }
+// }
 
 
-module.exports = {
-    
-    getAllAlbums,
-    getAlbumById,
-    updateAlbum,
-    createAlbum,
-    deleteAlbum,
-    getAllSongs,
-    getSongById,
-    createPlaylist,
-    getAllPlaylist,
-    // updatePlaylist,
-    // deletePlaylist,
-
-}

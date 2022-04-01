@@ -27,10 +27,16 @@ export const SliderData = [
         image: 'https://www.vibe.com/wp-content/uploads/2016/08/Screen-Shot-2016-08-25-at-10.04.05-PM.png?w=617'
     },
     {
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX4wckE7dmBAmcaMXDqKUVJrIqyBrcp_ODpg&usqp=CAU'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3utIVwsrbMXcexl5ljn0ROG1lK9sD8YbZQQ&usqp=CAU'
     },
     {
         image: 'https://media.gq.com/photos/57cf04919df2d32f7a5c44ea/master/pass/saint-pablo.jpg'
+    },
+    {
+        image: 'https://www.masslive.com/resizer/sKHnKIB3l2DZsJeZBzd67rdh8eM=/1280x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.masslive.com/home/mass-media/width2048/img/entertainment/photo/kanye-west-yeezus-tour-by-joshua-mellin-11447011554-ljpg-c1b6ace791f2d344.jpg'
+    },
+    {
+        image: 'https://www.rollingstone.com/wp-content/uploads/2018/06/rs-13565-kanye-1800-1385144890.jpg'
     },
 ]
 

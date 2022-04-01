@@ -7,18 +7,17 @@ import axios from 'axios'
 const EditAlbumForm = (props) => {
   let navigate = useNavigate()
   
-    // const url = 'http://localhost:4000/api/albums'
-    const url = `http://localhost:4000/api/albums/update-new/:id`
+  
+    const url = `http://localhost:4000/api/albums/update-new`
     const [data, setData] = useState({
           name: '',
-          image: '',
-          
+          image:''
    })
-    const submit = async(e) => {
+    function submit (e) {
          e.preventDefault()
           axios.put(url, {
           name: data.name,
-          image: data.image
+         
         })
         .then(res => {
            console.log(res.data)
@@ -32,6 +31,24 @@ const EditAlbumForm = (props) => {
           console.log(newdata)
         }
 
+      
+              
+          //   //onSubmit handler
+          //   const onSubmit = (albums) => {
+          //     axios
+          //       .put(
+          //         "http://localhost:4000/api/playlist" +
+          //           props.id,
+          //         albums
+          //       )
+          //       .then((res) => {
+          //         if (res.status === 200) {
+          //           alert("Album updated");
+          //           props.history.push("/albums");
+          //         } else Promise.reject();
+          //       })
+          //       .catch((err) => alert("Something went wrong"));
+          //   };
         // const updateAlbum = async (id) => {
         //     await axios.put(`http://localhost:4000/api/albums/${id}`)
         //     alert("Album was updated!")
@@ -40,10 +57,10 @@ const EditAlbumForm = (props) => {
 
   return (
     <div>
-    <h1>EditAlbum</h1>
+    <p>Change name</p>
     <form onSubmit={ submit }>
       <input type="text" id={'name'} name={'name'} placeholder={'Name'} onChange={(e) => onChange(e)}/>
-      <input type="text" id={'image'} name={'image'} placeholder={'Album image'} onChange={(e) => onChange(e)}/>
+      {/* <input type="text" id={'image'} name={'image'} placeholder={'Album image'} onChange={(e) => onChange(e)}/> */}
       <button>Submit</button>
     </form>
     </div>

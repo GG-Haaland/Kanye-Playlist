@@ -1,34 +1,28 @@
 
 import './App.css';
 import { useState, useEffect } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Nav from './components/Nav'
 import AlbumList from './components/AlbumList'
 import PlaylistForm from './components/Playlist'
 import AlbumDeets from './components/AlbumDeets'
-import Search from './components/Search'
-// import albumArray from './dummyAlbums'
 import axios from 'axios'
 import Song from './components/Song'
 import SongDeets from './components/SongDeets'
 import About from './components/About'
-import ImageSlider from './components/ImageSlider'
 import EditAlbumForm from './components/EditAlbumForm'
 
 function App() {
   const [albums, setAlbum] = useState([])
   const [songs, setSongs] = useState([])
   const [newAlbum, setNewAlbum] = useState({
+    id: '',
     name:'',
     image:''
   })
-  const [updateAlbum, setUpdateAlbum] = useState()
 
- 
- 
-
-///////////// ALBUM API CALLS //////////////////////
+  ///////////// ALBUM API CALLS //////////////////////
   const getAlbums = async() => {
     const albumList = 
     await axios.get('http://localhost:4000/api/albums')
@@ -58,9 +52,6 @@ function App() {
     
   })
   }
-  ///// DELETE ALBUMS //////////////////////////////////////////////////////
- 
-
   const handleChange = (e) => {
     setNewAlbum({ ...newAlbum, [e.target.name]: e.target.value })
   }
@@ -86,9 +77,6 @@ function App() {
           <Route path='/' element={ <Home albums={albums} /> } />
           <Route path="/albums" element={ <AlbumList albums={albums} newAlbum= {newAlbum} />} />
           <Route path="/albums/:id" element={ <AlbumDeets albums={albums} getAlbums={getAlbums} songs={songs} getSongs={getSongs} />} />
-          {/* <Route path="/albums/update-albums/:id" element={ <EditAlbumForm newAlbum= {newAlbum} 
-                            handleChange={handleChange} 
-                            addAlbum={addAlbum}/>} /> */}
           <Route path="/songs" element={ <Song songs={songs}/>} />
           <Route path="/songs/:id" element={ <SongDeets songs={songs} getSongs={getSongs} />} />
           <Route path='/playlists' element={ <PlaylistForm
@@ -96,6 +84,7 @@ function App() {
                             handleChange={handleChange} 
                             addAlbum={addAlbum}/>} />
           <Route path='/about' element={ <About /> } />
+          <Route path="/songs/:id" element={ <EditAlbumForm songs={songs} getSongs={getSongs} />} />
         </Routes>
         </main>
     </div>

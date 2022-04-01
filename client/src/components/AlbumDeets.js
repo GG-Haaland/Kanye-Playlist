@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link} from "react-router-dom";
+import { useParams, Link, useNavigate} from "react-router-dom";
 import axios from 'axios'
 import EditAlbumForm from './EditAlbumForm'
 
@@ -7,7 +7,7 @@ import EditAlbumForm from './EditAlbumForm'
 
 
 const AlbumDeets = (props) => {
-  // let navigate = useNavigate()
+  let navigate = useNavigate()
   let { id } = useParams();
  
   const [selectedAlbum, setAlbum] = useState('');
@@ -36,16 +36,19 @@ const AlbumDeets = (props) => {
           const deleteAlbum = async (id) => {
             await axios.delete(`http://localhost:4000/api/albums/${id}`)
             alert("Album was deleted!")
-            // navigate('/albums')
+            .then(res => {
+              
+              navigate('/albums')
+           })
           }
           
           const updateAlbum = async (id) => {
-            await axios.put(`http://localhost:4000/api/albums/update-new/:id`)
+            await axios.put(`http://localhost:4000/api/albums/update-new/${id}`)
             alert("Album was updated!")
           }
 
-        function refreshPage() { 
-            window. location. reload(false); } 
+        // function refreshPage() { 
+        //     window. location. reload(false); } 
 
   return selectedAlbum ? (
   <div className="detail">
@@ -57,7 +60,7 @@ const AlbumDeets = (props) => {
     <div className="info-wrapper">
       <div style={{ display: "inline-block", justifyContent: "space-between", textAlign: "center" }}>
         <h3>RELEASE DATE: {selectedAlbum.released}</h3>
-        <p style={{marginLeft: "20%", marginRight: "20%"}}>About: {selectedAlbum.description}</p>
+        <p style={{marginLeft: "20%", marginRight: "20%"}}> {selectedAlbum.description}</p>
           <div className="song-list">
                {selectedSongs.map((song) => 
                   <div key={song._id}>
@@ -71,8 +74,7 @@ const AlbumDeets = (props) => {
                 <Link to='/songs'><button>Songs</button></Link>
               </div>
               <button onClick={()=>deleteAlbum(id)}> Delete </button>
-              {/* <button>Delete</button> */}
-              <EditAlbumForm onClick={()=>updateAlbum(id)}/>
+              <EditAlbumForm onClick={()=>updateAlbum()}/>
       </div>
     </div>
   </div>

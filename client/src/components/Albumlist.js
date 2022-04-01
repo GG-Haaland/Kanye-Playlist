@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import PlaylistForm from './Playlist'
+
 
 
 const AlbumList = () => {
@@ -20,13 +20,13 @@ const AlbumList = () => {
     setAlbums(albumList.data.albums)
     console.log(albumList)
   }
-  const deleteAlbum = async (album) => {
-    await axios.get('http://localhost:4000/api/albums')
-  }
+  // const deleteAlbum = async (album) => {
+  //   await axios.get('http://localhost:4000/api/albums')
+  // }
   
   useEffect(() =>{
     getAlbums()
-    deleteAlbum()
+    // deleteAlbum()
   },[])
   
 
