@@ -29,12 +29,12 @@ const getAlbumById = async (req, res) => {
 const updateAlbum = async (req, res) => {
     try {
         const { id } = req.params;
-        await Album.findByIdAndUpdate(id, req.body, (err, album) => {
+        await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, album) => {
             if (err) {
                 res.status(500).send(err);
             }
             if (!album) {
-                res.status(500).send('Playlist not found!');
+                res.status(500).send('Album not found!');
             }
             return res.status(200).json(album);
         })

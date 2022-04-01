@@ -9,7 +9,7 @@ router.delete('/albums/:id', controllers.deleteAlbum)
 router.get('/albums', controllers.getAllAlbums)
 router.get('/albums/:id', controllers.getAlbumById)
 router.post('/playlists', controllers.createAlbum)
-router.put('/albums/update-album/:id', controllers.updateAlbum)
+router.put('/albums/:id', controllers.updateAlbum)
 router.delete('/albums/:id', controllers.deleteAlbum)
 router.post('/albums/add-new',controllers.createAlbum)
 
