@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <nav className="navbar">
         {/* <img src='https://www.pluggedin.com/wp-content/uploads/2020/01/Kanye-West-The-Life-of-Pablo-review-image638x366.jpg-1200x688.jpeg' alt="Pablo orange" id="logo" /> */}
-      <h1>Pla-Ye list</h1>
+      <h1>Pla-Ye-list</h1>
       <div className="nav-links">
 
         <ul>

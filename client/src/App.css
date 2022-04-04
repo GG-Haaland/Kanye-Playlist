@@ -19,11 +19,14 @@
 }
 h1{
   font-family: 'Bebas Neue', cursive;
-  font-size: 40px;
+  font-size: 60px;
   text-shadow: -1px 1px 2px #000,
   1px 1px 2px #000,
   1px -1px 0 #000,
   -1px -1px 0 #000;
+}
+h3{
+  font-size: 25px;
 }
 p{
   font-size: 20px;
@@ -135,6 +138,7 @@ p{
   1px 1px 2px #000,
   1px -1px 0 #000,
   -1px -1px 0 #000;
+ 
 }
 
 .album-img {
@@ -142,8 +146,8 @@ p{
   max-width: 600px;
   max-height: 600px;
   margin: auto;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   text-shadow: -1px 1px 2px #000,
   1px 1px 2px #000,
   1px -1px 0 #000,
@@ -159,6 +163,7 @@ p{
   height: 500px;
   font-family: 'Bebas Neue', cursive;
   font-size: 20px;
+  
 }
 
 .sunday{
@@ -174,11 +179,12 @@ p{
 
 .info-wrapper{
   background-color: rgba(10, 10, 10, 0.272);
+  margin-top: 40px;
 }
 
 .kanye-head{
-  height: 80px;
-  width: 70px;
+  height: 100px;
+  width: 90px;
 }
 .slider{
   position: relative;
@@ -194,8 +200,8 @@ p{
 }
 .right-arrow{
   position: absolute;
-  top: 50%;
-  right: 10%;
+  top: 61%;
+  right: 20%;
   font-size: 3rem;
   color: #000;
   z-index: 10;
@@ -204,8 +210,8 @@ p{
 }
 .left-arrow{
   position: absolute;
-  top: 50%;
-  left: 10%;
+  top: 61%;
+  left: 20%;
   font-size: 3rem;
   color: #000;
   z-index: 10;

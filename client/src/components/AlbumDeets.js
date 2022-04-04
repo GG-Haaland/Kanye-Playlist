@@ -13,25 +13,24 @@ const AlbumDeets = (props) => {
   const [selectedAlbum, setAlbum] = useState('');
  
           useEffect(() => {
-              const selectedAlbum = props.albums.find(
+              let selectedAlbum = props.albums.find(
                 (album) => album._id === (id)
                 )
                 setAlbum(selectedAlbum)
                 console.log(selectedAlbum)
-          }, [props.albums, props.songs,id]);
+          }, [props.albums, id]);
 
   const [selectedSongs,setSelectedSongs] = useState('')
 
-          useEffect(() => {
-            // console.log(props.song)
-            const selectedSongs = props.songs.filter(
-              (song) => song.album_id === (id)
-              )
-              
-            setSelectedSongs(selectedSongs)
-            console.log(selectedSongs)
-              
-          }, [props.albums, props.songs, id]);
+  useEffect(() => {
+    console.log(id)
+    let selectedSongs = props.songs.filter(
+    (song) => song.album_id === (id)
+    )
+    setSelectedSongs(selectedSongs)
+}, [props.albums, props.songs, id])
+
+
      
           const deleteAlbum = async (id) => {
             await axios.delete(`http://localhost:4000/api/albums/${id}`)
@@ -43,7 +42,7 @@ const AlbumDeets = (props) => {
           }
           
           const updateAlbum = async (id) => {
-            await axios.put(`http://localhost:4000/api/albums/update-new/${id}`)
+            await axios.put(`http://localhost:4000/api/albums/${id}`)
             alert("Album was updated!")
           }
 
@@ -71,10 +70,19 @@ const AlbumDeets = (props) => {
                   )}
               </div>
               <div>
+              <div className='song-details'>
+                       <h3>{selectedSongs.map((song) =>
+                            <EditAlbumForm albumId={id} key={song._id} song={song} />
+                        )}</h3> 
+                        <div className='song-form'>
+                            <h3>Add A New Song</h3>
+                            <EditAlbumForm albumId={id}/>
+                        </div>
+              </div>        
                 <Link to='/songs'><button>Songs</button></Link>
               </div>
               <button onClick={()=>deleteAlbum(id)}> Delete </button>
-              <EditAlbumForm onClick={()=>updateAlbum()}/>
+              {/* <EditAlbumForm onClick={()=>updateAlbum()}/> */}
       </div>
     </div>
   </div>

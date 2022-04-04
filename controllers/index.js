@@ -114,9 +114,6 @@ const deleteSong = async (req, res) => {
 }
 
 
-
-
-
 /////////////// PLAYLIST FUNCTIONS //////////////////
 
 const createPlaylist = async (req, res) => {

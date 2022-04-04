@@ -6,6 +6,7 @@ import Search from '../components/Search'
 import AlbumDeets from './AlbumDeets'
 import ImageSlider from './ImageSlider'
 import { SliderData } from './SliderData'
+import AlbumList from './AlbumList'
 
 const Home = (props) => {
 
@@ -38,7 +39,8 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <ImageSlider slides={SliderData}/>
+      {/* <AlbumList/> */}
+      {/* <ImageSlider slides={SliderData}/> */}
       <h1>Search Albums! </h1>
       <Search onSubmit={searchOnSubmit} onChange={searchOnChange} value={searchQuery}/>
       <div className="search">
