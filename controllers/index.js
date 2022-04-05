@@ -50,6 +50,15 @@ const updateAlbum = async (req, res) => {
         return res.status(500).send(error.message);
     }
 }
+const editAlbum = async (req, res) => {
+    try {
+        const id = req.params.id
+        await Artist.updateOne({ _id: id }, req.body)
+        return res.status(200).send("Successfully Edited")
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
+    }
+}
 
 const createAlbum = async (req, res) => {
     try {
@@ -150,52 +159,9 @@ module.exports = {
     createPlaylist,
     getAllPlaylist,
     deleteSong,
+    editAlbum
 }
 
-// const updateAlbum = async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         await Album.findByIdAndUpdate(id, req.body, { new: true }, (err, plant) => {
-//             if (err) {
-//                 res.status(500).send(err);
-//             }
-//             if (!album) {
-//                 res.status(500).send('Playlist not found!');
-//             }
-//             return res.status(200).json(album);
-//         })
-//     } catch (error) {
-//         return res.status(500).send(error.message);
-//     }
-// }
 
-// const deletePlaylist = async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         const deleted = await Album.findByIdAndDelete(id)
-//         if (deleted) {
-//             return res.status(200).send("Playlist deleted");
-//         }
-//         throw new Error("Plant not found");
-//     } catch (error) {
-//         return res.status(500).send(error.message);
-//     }
-// }
-// const updateSong = async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         await Song.findByIdAndUpdate(id, req.body, { new: false }, (err, song) => {
-//             if (err) {
-//                 res.status(500).send(err);
-//             }
-//             if (!song) {
-//                 res.status(500).send('Song not found!');
-//             }
-//             return res.status(200).json(song);
-//         })
-//     } catch (error) {
-//         return res.status(500).send(error.message);
-//     }
-// }
 
 

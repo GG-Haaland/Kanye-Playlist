@@ -11,7 +11,7 @@ import axios from 'axios'
 import Song from './components/Song'
 import SongDeets from './components/SongDeets'
 import About from './components/About'
-import EditAlbumForm from './components/EditAlbumForm'
+
 
 function App() {
   const [albums, setAlbum] = useState([])
@@ -84,7 +84,7 @@ function App() {
                             handleChange={handleChange} 
                             addAlbum={addAlbum}/>} />
           <Route path='/about' element={ <About /> } />
-          <Route path="/songs/:id" element={ <EditAlbumForm songs={songs} getSongs={getSongs} />} />
+
         </Routes>
         </main>
     </div>

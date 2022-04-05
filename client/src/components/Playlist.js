@@ -17,7 +17,7 @@ const PlaylistForm = (props) => {
           
    })
     function submit (e) {
-         e.preventDefault()
+        //  e.preventDefault()
           axios.post(url, {
           name: data.name,
           image: data.image,
